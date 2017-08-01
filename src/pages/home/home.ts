@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+
+import { ChatPage } from '../chat/chat';
+import { CalendarPage } from '../calendar/calendar';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +9,9 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  tab1 = ChatPage;
+  tab2 = CalendarPage;
 
-  }
+  constructor() {}
 
 }
