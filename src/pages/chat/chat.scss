@@ -11,6 +11,9 @@ page-chat {
         font-weight: bold;
         font-size: 80%;
     }
+    .innerMessage.messageRight{
+        background: color($colors, 'secondary');
+    }
     .message{
         font-size: 120%;
     }
