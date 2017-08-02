@@ -24,9 +24,7 @@ export class ChatPage {
     public navCtrl: NavController, public navParams: NavParams) {
     this.username = this.navParams.get('username');
     this.s = this.db.list('/chat').subscribe( data => { 
-      data.map( elem => {
-        this.messages.push(elem);
-      })
+      this.messages = data;
     });
   }
 
