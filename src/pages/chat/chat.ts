@@ -17,17 +17,28 @@ export class ChatPage {
 
   username: string = '';
   message: string = '';
+  s;
+  messages: object[] = [];
 
   constructor(public db: AngularFireDatabase, 
     public navCtrl: NavController, public navParams: NavParams) {
     this.username = this.navParams.get('username');
+    this.s = this.db.list('/chat').subscribe( data => { 
+      data.map( elem => {
+        this.messages.push(elem);
+      })
+    });
   }
 
   sendMessage(){
     this.db.list('/chat').push({
       username: this.username,
       message: this.message
-    })
+    }).then( () => {
+      // message is sent
+    }).catch( () => {
+      // some error.maybe firebase is unreachble
+    });
   }
 
   ionViewDidLoad() {
