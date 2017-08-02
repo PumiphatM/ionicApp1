@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams} from 'ionic-angular';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 /**
  * Generated class for the ChatPage page.
@@ -37,6 +37,7 @@ export class ChatPage {
     }).catch( () => {
       // some error.maybe firebase is unreachble
     });
+    this.message = '';
   }
 
   ionViewDidLoad() {

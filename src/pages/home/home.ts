@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { ChathomePage } from '../chathome/chathome';
-import { CalendarPage } from '../calendar/calendar';
+// import { CalendarPage } from '../calendar/calendar';
 
 @Component({
   selector: 'page-home',
