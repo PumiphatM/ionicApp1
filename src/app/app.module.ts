@@ -3,15 +3,19 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { NgCalendarModule  } from 'ionic2-calendar';
 
-import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
+import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SlidesPage} from '../pages/slides/slides';
 import { ChathomePage } from '../pages/chathome/chathome';
 import { ChatPage } from '../pages/chat/chat';
 import { CalendarPage } from '../pages/calendar/calendar';
+import { EventModalPage } from '../pages/event-modal/event-modal';
 
 var config = {
     apiKey: "AIzaSyCXbgcyi9qOwQ4gosFH06ZuRsaXwLMlG1k",
@@ -29,10 +33,12 @@ var config = {
     SlidesPage,
     ChathomePage,
     ChatPage,
-    CalendarPage
+    CalendarPage,
+    EventModalPage
   ],
   imports: [
     BrowserModule,
+    NgCalendarModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule
@@ -44,12 +50,13 @@ var config = {
     SlidesPage,
     ChathomePage,
     ChatPage,
-    CalendarPage
+    CalendarPage,
+    EventModalPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}
